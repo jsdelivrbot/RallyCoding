@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 class App extends Component {
-  componentWillMount(){
+  componentWillMount() {
     this.props.fetchUsers();
   }
 
-  renderUser({id,name,email}){
-    return(
+  renderUser({id, name, email}) {
+    return (
       <li className="list-group-item" key={id}>
-        <span className="label label-default label-pill pull-xs-right">
+        <span className="label label-defualt label-pill pull-xs-right">
           <a href={email}>{email}</a>
         </span>
+        {name}
       </li>
     );
   }
@@ -22,13 +23,11 @@ class App extends Component {
       <div>
         <h4>Email Directory</h4>
         <ul className="list-group">
-          {this.props.users.map(this.rederUser)}
+          {this.props.users.map(this.renderUser)}
         </ul>
       </div>
     );
   }
 }
 
-
-
-export default connect(null,{fetchUsers})(App)
+export default connect((state => state), actions)(App);
