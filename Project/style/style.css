@@ -1,5 +1,11 @@
-.selector-for-some-widget {
-  -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-          box-sizing: content-box;
+.redcolor {
+  background-color: red;
 }
+
+.container {
+  background-color: #DCDBDB;
+
+}
+ .borderSeparator{
+   border: solid #9B9999;
+ }
