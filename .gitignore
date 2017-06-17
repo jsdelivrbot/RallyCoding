@@ -1,4 +1,5 @@
 /001/node_modules
+/Project/node_modules
 bundle.js
 npm-debug.log
 .DS_Store

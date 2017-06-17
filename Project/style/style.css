@@ -1,0 +1,12 @@
+.redcolor {
+  background-color: red;
+}
+
+.container {
+  background-color: #DCDBDB;
+
+}
+ .borderSeparator{
+   border: 2px solid #eceeef;
+   /*border: solid #9B9999;*/
+ }
