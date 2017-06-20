@@ -4,14 +4,18 @@ import {getDenomination} from '../actions/index'
 import {bindActionCreators} from 'redux';
 
 class denominacionContainer extends Component {
-
+  componentWillMount(){
+    this.props.getDenomination('usa');
+  }
   render(){
+    const {bills,coins}=this.props;
+    console.log(bills);
     return(
         <div className="col-md-4  borderSeparator">
 
           <div className="row">
             <div className="col-md-6  ">
-              {this.props.getDenomination}
+
             </div>
 
             <div className="col-md-6  ">
@@ -23,8 +27,6 @@ class denominacionContainer extends Component {
   );
   }
 }
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({getDenomination},dispatch);
-}
 
-export default connect(null,mapDispatchToProps)(denominacionContainer);
+
+export default connect(null,{getDenomination})(denominacionContainer);
