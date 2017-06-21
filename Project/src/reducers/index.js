@@ -3,10 +3,11 @@ import { combineReducers } from 'redux';
 const rootReducer = combineReducers({
   contry: bindingState
 });
-function  bindingState(state =[], action){
+function  bindingState(state =null, action){
   switch (action.type) {
     case 'GET_DENOMINATION':
-      return  [action.payload.bills,action.payload.coins,... state ];
+      //console.log('getDenomination ',action.payload.bills);
+      return  action.payload
     default:
       return state;
   }

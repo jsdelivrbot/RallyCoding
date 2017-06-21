@@ -1,25 +1,43 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
 import {getDenomination} from '../actions/index'
-import {bindActionCreators} from 'redux';
+import {bindActionCreators} from "redux";
 
 class denominacionContainer extends Component {
   componentWillMount(){
     this.props.getDenomination('usa');
   }
+  createListElements(elements){
+    return elements.map((element)=>{
+      console.log(element)
+      return(
+        <li key={element} className="list-group-item" >{element}</li>
+      );
+    });
+  }
+
   render(){
-    const {bills,coins}=this.props;
-    console.log(bills);
+    if (!this.props.contry){
+      return(
+        <div>
+          Loading...
+        </div>
+      )
+    }
+    const {bills,coins}=this.props.contry;
+    //console.log(bills);
     return(
         <div className="col-md-4  borderSeparator">
 
           <div className="row">
             <div className="col-md-6  ">
-
+            <ul className="list-group">
+              {this.createListElements(bills)}
+            </ul>
             </div>
 
             <div className="col-md-6  ">
-            flex-column
+            {this.createListElements(coins)}
             </div>
           </div>
 
@@ -28,5 +46,12 @@ class denominacionContainer extends Component {
   }
 }
 
+function mapStateToprops(state) {
+  return{ contry : state.contry};
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({getDenomination}, dispatch)
+}
 
-export default connect(null,{getDenomination})(denominacionContainer);
+
+export default connect(mapStateToprops,mapDispatchToProps)(denominacionContainer);
