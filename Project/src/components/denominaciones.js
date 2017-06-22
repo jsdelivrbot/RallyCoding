@@ -9,9 +9,8 @@ class denominacionContainer extends Component {
   }
   createListElements(elements){
     return elements.map((element)=>{
-      console.log(element)
       return(
-        <li key={element} className="list-group-item" >{element}</li>
+        <li key={element} className="list-group-item" ><input key={element} type="number"/>{element}</li>
       );
     });
   }
