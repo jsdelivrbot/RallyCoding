@@ -19,3 +19,10 @@ export function getDenomination(contry) {
           type :'GET_DENOMINATION'
           }
 }
+
+export function getSum() {
+   return{
+     type:'GET_SUM',
+     payload:'1000'
+   }
+ }

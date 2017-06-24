@@ -7,7 +7,7 @@ class denominacionContainer extends Component {
   componentWillMount(){
     this.props.getDenomination('usa');
   }
-  createListElements(elements){
+  createListElements(elements=[]){
     return elements.map((element)=>{
       return(
         <li key={element} className="list-group-item" ><input key={element} type="number"/>{element}</li>
@@ -46,7 +46,7 @@ class denominacionContainer extends Component {
 }
 
 function mapStateToprops(state) {
-  return{ contry : state.contry};
+  return{ contry : state.info.contry};
 }
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({getDenomination}, dispatch)
