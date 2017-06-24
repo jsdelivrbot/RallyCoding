@@ -1,12 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
-import {getSum} from '../actions/index'
-import {bindActionCreators} from "redux";
+
 
 class configuracion extends Component {
-  componentWillMount(){
-    this.props.getSum();
-  }
+
   render(){
     return(
 
@@ -28,9 +25,5 @@ class configuracion extends Component {
 function mapStateToprops(state) {
   return{ sum : state.info.sum};
 }
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({getSum}, dispatch)
-}
 
-
-export default connect(mapStateToprops,mapDispatchToProps)(configuracion);
+export default connect(mapStateToprops)(configuracion);

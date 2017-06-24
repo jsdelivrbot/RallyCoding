@@ -20,9 +20,9 @@ export function getDenomination(contry) {
           }
 }
 
-export function getSum() {
+export function setActiontoHash(index,value) {
    return{
-     type:'GET_SUM',
-     payload:'1000'
+     type:'SET_TO_HASH',
+     payload:{indexM:index,valueM:value}
    }
  }
