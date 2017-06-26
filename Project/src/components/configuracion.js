@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
-
+import {getDenomination} from '../actions/index'
 
 class configuracion extends Component {
-
+  componentWillMount(){
+    this.props.getDenomination('usa');
+  }
   render(){
     return(
 
@@ -26,4 +28,4 @@ function mapStateToprops(state) {
   return{ sum : state.info.sum};
 }
 
-export default connect(mapStateToprops)(configuracion);
+export default connect(mapStateToprops,{getDenomination})(configuracion);

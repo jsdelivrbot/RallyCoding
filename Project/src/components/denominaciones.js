@@ -1,22 +1,12 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
-import {getDenomination,setActiontoHash} from '../actions/index'
+import {setActiontoHash} from '../actions/index'
 import {bindActionCreators} from "redux";
+import Denomination from './denomination';
 
 class denominacionContainer extends Component {
   componentWillMount(){
-    this.props.getDenomination('usa');
-  }
-
-  setSum() {
-    console.log("console")
-  }
-  createListElements(elements=[]){
-    return elements.map((element)=>{
-      return(
-        <li key={element} className="list-group-item"  ><input key={element} type="text" onchange={this.setSum()}/>{element}</li>
-      );
-    });
+    this.props.setActiontoHash('0','0');
   }
 
   render(){
@@ -34,13 +24,11 @@ class denominacionContainer extends Component {
 
           <div className="row">
             <div className="col-md-6  ">
-            <ul className="list-group">
-              {this.createListElements(bills)}
-            </ul>
+              <Denomination elements ={bills} setActionto={this.props.setActiontoHash}/>
             </div>
 
             <div className="col-md-6  ">
-            {this.createListElements(coins)}
+            <Denomination elements ={coins} setActionto={this.props.setActiontoHash}/>
             </div>
           </div>
 
@@ -53,7 +41,7 @@ function mapStateToprops(state) {
   return{ contry : state.info.contry};
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({getDenomination, setActiontoHash}, dispatch)
+  return bindActionCreators({setActiontoHash}, dispatch)
 }
 
 

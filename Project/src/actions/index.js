@@ -1,7 +1,7 @@
 //if in the future is implemented a Rest Service where is retreaving
 //all information as a JSon we are going to create a Axios request.
 
-export function getDenomination(contry) {
+export function getDenomination(contry='mex') {
   const denominations ={
   usa: {
         bills:['1','2','5','10','20','50','100','500','1000','5000','10000'],
@@ -20,7 +20,7 @@ export function getDenomination(contry) {
           }
 }
 
-export function setActiontoHash(index,value) {
+export function setActiontoHash(index=0,value=0) {
    return{
      type:'SET_TO_HASH',
      payload:{indexM:index,valueM:value}
