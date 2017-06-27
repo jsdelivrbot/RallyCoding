@@ -12,17 +12,13 @@ function Denomination(props){
 function createListElements(elements=[],setActionto){
 
   return elements.map((element)=>{
-    getValue(this)
+
     return(
       <li key={element} className="list-group-item">
-        <input key={element} type="number" onChange={()=>setActionto(element)}/>
+        <input key={element} type="number" onChange={(event)=>setActionto(element,event.target.value)}/>
         {element}
       </li>
     );
   });
 }
-getValue(inputElement){
-  console.log(inputElement);
-    return 10;
-  }
 export default Denomination;

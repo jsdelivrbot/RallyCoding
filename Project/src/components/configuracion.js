@@ -12,7 +12,7 @@ class configuracion extends Component {
         <div className="col-md-8 ">
 
           <div className="row borderSeparator">
-            {this.props.sum}
+            Total: {this.props.sum}
           </div>
           <div className="row borderSeparator">
             0000000
