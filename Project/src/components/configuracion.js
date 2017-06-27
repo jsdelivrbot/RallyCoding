@@ -1,12 +1,23 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
 import {getDenomination} from '../actions/index'
+import Dropdown from 'react-dropdown';
 
 class configuracion extends Component {
+  constructor (props) {
+    super(props)
+    this._onSelect = this._onSelect.bind(this)
+  }
+
   componentWillMount(){
     this.props.getDenomination('usa');
   }
+  _onSelect(option){
+    this.props.getDenomination(option.value);
+  }
   render(){
+    const options = ['usa', 'mex'];
+    const defaultOption = options[0];
     return(
 
         <div className="col-md-8 ">
@@ -15,7 +26,8 @@ class configuracion extends Component {
             Total: {this.props.sum}
           </div>
           <div className="row borderSeparator">
-            0000000
+            <Dropdown options={options} onChange={this. _onSelect} value={defaultOption} />
+
           </div>
 
 

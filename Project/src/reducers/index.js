@@ -8,6 +8,7 @@ const rootReducer = combineReducers({
 function  bindingState(state =INITIAL_STATE, action){
   switch (action.type) {
     case 'GET_DENOMINATION':
+      sumMap.clear();
       //console.log('getDenomination ',action.payload.bills);
       return  {...state, contry:action.payload ,sum:'0'}
     case 'SET_TO_HASH':
