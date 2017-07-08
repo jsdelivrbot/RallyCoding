@@ -1,0 +1,9 @@
+.conteiner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.raw{
+  display: flex;
+  flex-grow: 1;
+}
