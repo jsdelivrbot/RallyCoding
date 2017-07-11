@@ -19,8 +19,9 @@ class gameFlow extends initialGame {
   checkWhoIsTheWinner(){
     if (this.elements[1] === this.elements[2] && this.elements[1]=== this.elements[3] &&this.elements[1]!== '') {
       return true;
-    } else {
-
+    }
+    else if (this.elements[4] === this.elements[5] && this.elements[4]=== this.elements[6] &&this.elements[4]!== '') {
+      return true;
     }
     return false;
   }
