@@ -1,5 +1,6 @@
-function initialGame() {
-  this.elements= {
+class gameFlow {
+  constructor() {
+    this.elements= {
     1:'',
     2:'',
     3:'',
@@ -11,11 +12,9 @@ function initialGame() {
     9:''
   };
   this.whoPlays='X';
-}
-class gameFlow extends initialGame {
-  constructor() {
-    super();
   }
+  
+
   checkWhoIsTheWinner(){
     if (this.elements[1] === this.elements[2] && this.elements[1]=== this.elements[3] &&this.elements[1]!== '') {
       return true;
@@ -26,6 +25,7 @@ class gameFlow extends initialGame {
     return false;
   }
 }
+
 
 const newGame = new gameFlow()
 let elements = newGame.elements;
@@ -47,6 +47,12 @@ function addClickEventToElements(newGame,...spaceElements) {
 
 const spaceElements = document.querySelectorAll('.space') || [];
 const elementsAdded =addClickEventToElements(newGame,...spaceElements);
+
 setInterval(function(){
-  console.log(newGame.checkWhoIsTheWinner())
+  //console.log(newGame.checkWhoIsTheWinner())
+  for (var i = 1; i <= 9; i++) {
+    let element =document.getElementById(`${i}`);
+    
+    console.log(element.innerText +"  id "+ i);
+  };
 }, 200);
