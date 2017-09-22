@@ -1,3 +1,19 @@
 body {
     padding-top: 50px;
   }
+
+  .em-text{
+  color: green !important;
+}
+
+.jumbotron{
+  background: url(../img/site_showcase_bg.jpg) no-repeat top center !important;
+  color: #fff;
+  height: 598px;
+  overflow: none;
+}
+
+.jumbotron .app-btn{
+  width: 40%;
+  margin-right: 30px;
+}
