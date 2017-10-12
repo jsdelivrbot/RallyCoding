@@ -5,7 +5,9 @@ body {
 .em-text{
   color: green !important;
 }
-
+section{
+  padding: 40px 0 40px 0;
+}
 .jumbotron{
   background: url(../img/site_showcase_bg.jpg) no-repeat top center ;
   color: #fff;
@@ -31,4 +33,9 @@ img.demo {
   width: 100%;
   padding: 3px;
   border: 1px solid #ccc;
+}
+section#feature {
+  background: #1caa98;
+  color: #fff;
+  padding: 40;
 }
