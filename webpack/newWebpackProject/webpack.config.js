@@ -4,7 +4,7 @@ const config ={
     entry: './src/index.js',
     output:{
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundel.js'
+        filename: 'bundle.js'
     }
 };
 
