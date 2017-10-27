@@ -1,6 +1,7 @@
 /001/node_modules
 /Project/node_modules
 /webpack/newWebpackProject/node_modules
+/webpack/project/node_modules
 bundle.js
 npm-debug.log
 .DS_Store
